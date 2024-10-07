@@ -40,47 +40,59 @@ The project is structured with a JWT-based authentication mechanism for securing
 
 4. Code Structure
 
- 4.1 Backend Code Structure
-```
-library-management/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── library/
-│   │   │           ├── config/
-│   │   │           │   ├── JwtAuthenticationFilter.java
-│   │   │           │   ├── JwtUtil.java
-│   │   │           │   └── SecurityConfig.java
-│   │   │           ├── controllers/
-│   │   │           │   ├── AuthController.java
-│   │   │           │   └── BookController.java
-│   │   │           ├── models/
-│   │   │           │   ├── Book.java
-│   │   │           │   ├── BorrowHistory.java
-│   │   │           │   └── User.java
-│   │   │           ├── repositories/
-│   │   │           │   ├── BookRepository.java
-│   │   │           │   └── UserRepository.java
-│   │   │           ├── services/
-│   │   │           │   ├── BookService.java
-│   │   │           │   └── UserService.java
-│   │   │           └── LibraryManagementApplication.java
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── library/
-│                   └── LibraryManagementApplicationTests.java
-└── pom.xml
-```
+library-management
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.library
+│   │   │       ├── LibraryManagementApplication.java        # Main application class
+│   │   │       │
+│   │   │       ├── config                                  # Security and JWT configuration
+│   │   │       │   ├── JwtAuthenticationFilter.java        # JWT filter for securing requests
+│   │   │       │   ├── JwtUtil.java                        # Utility for JWT operations
+│   │   │       │   └── SecurityConfig.java                 # Configures Spring Security with JWT
+│   │   │       │
+│   │   │       ├── controllers                             # API controllers for various entities
+│   │   │       │   ├── AuthController.java                 # Authentication and JWT token handling
+│   │   │       │   ├── BookController.java                 # Manages book-related operations (CRUD)
+│   │   │       │   ├── BorrowHistoryController.java        # Handles borrowing history management
+│   │   │       │   └── MemberController.java               # Manages member-specific operations
+│   │   │       │
+│   │   │       ├── models                                  # Data models (Entities)
+│   │   │       │   └── (e.g., User, Book, BorrowHistory)
+│   │   │       │
+│   │   │       ├── repositories                            # Repositories for database access
+│   │   │       │   ├── BookRepository.java                 # CRUD operations for books
+│   │   │       │   ├── BorrowHistoryRepository.java        # Access to borrow history data
+│   │   │       │   └── UserRepository.java                 # Access to user-related data
+│   │   │       │
+│   │   │       └── services                                # Business logic for entities
+│   │   │           ├── BookService.java                    # Book service logic
+│   │   │           ├── BorrowHistoryService.java           # Borrow history service logic
+│   │   │           └── UserService.java                    # User service logic
+│   │   │
+│   │   └── resources
+│   │       ├── static                                      # Static resources (frontend)
+│   │       │   ├── css
+│   │       │   │   └── style.css                           # Frontend styling
+│   │       │   ├── js
+│   │       │   │   ├── index.html                          # Homepage
+│   │       │   │   ├── librarian.html                      # Librarian dashboard
+│   │       │   │   └── member.html                         # Member dashboard
+│   │       │
+│   │       └── templates
+│   │           └── application.properties                  # Application configurations (database, JWT)
+│   │
+│   └── test
+│       └── java
+│           └── (Tests)
+│
+├── target                                                   # Compiled files (auto-generated)
+├── HELP.md                                                  # Project help file
+├── mvnw                                                     # Maven wrapper script
+└── pom.xml                                                  # Maven dependencies file
 
- 4.2 Frontend Code Structure
-```
-resources/
-├── static/
-│   ├── index.html      # Main HTML page
-│   └── app.js          # JavaScript for interacting with the API
-└── application.properties # Configurations for DB, JWT, etc.
 ```
 
 ---
