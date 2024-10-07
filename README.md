@@ -40,8 +40,91 @@ The project is structured with a JWT-based authentication mechanism for securing
 
 4. Code Structure
 
+ 1. Main Application :
+`LibraryManagementApplication.java`
+  - The entry point of the Spring Boot application. 
+  - Contains the `main()` method that runs the application.
 
-5. Frontend Approach
+2. Configurations (`config` package)
+
+- `JwtAuthenticationFilter.java`: 
+  - Filters requests to ensure valid JWT tokens.
+  
+- JwtUtil.java`: 
+  - Provides utility functions for generating and validating JWT tokens.
+
+- SecurityConfig.java`: 
+  - Configures Spring Security to enable JWT-based authentication for the API.
+
+3. Controllers (`controllers` package)
+
+- AuthController.java:
+  - Manages authentication endpoints (login, signup).
+
+- BookController.java`: 
+  - Manages book-related operations like adding, listing, and updating books.
+
+- BorrowHistoryController.java: 
+  - Handles borrowing and returning books.
+
+- MemberController.java`: 
+  - Manages library members' actions (Librarians and Members).
+
+4. Models (`models` package):
+
+- Book.java` 
+  - Represents a book entity with details like title, author, and availability.
+
+- BorrowHistory.java`: 
+  - Stores data about book borrowing and returning by members.
+
+- User.java: 
+  - Represents users (Librarians and Members) with attributes like username and roles.
+
+5. Repositories (`repositories` package)
+
+- BookRepository.java: 
+  - Provides data access methods for `Book` entities.
+
+- BorrowHistoryRepository.java: 
+  - Handles data access for borrowing records.
+
+- UserRepository.java: 
+  - Manages user data in the database.
+
+6. Services (`services` package)
+
+- BookService.java: 
+  - Contains the business logic for book operations.
+
+- BorrowHistoryService.java: 
+  - Manages borrow history logic.
+
+- `UserService.java: 
+  - Handles user management and operations like authentication.
+
+7. Resources:
+
+- `static/`: 
+  - Contains static frontend files (HTML, CSS, JS). 
+  - Includes pages for librarians and members, plus a main `index.html`.
+
+- application.properties`: 
+  - Configuration file for database connection, security, and other settings.
+
+8. Tests
+- LibraryManagementApplicationTests.java: 
+  - Contains unit tests for validating the functionality of the application.
+
+9. `pom.xml:
+
+- Maven configuration file that manages dependencies like Spring Boot, Spring Security, JWT, and MySQL.
+
+
+
+
+
+6. Frontend Approach
 The frontend is a simple, lightweight static site built with HTML, CSS, and JavaScript (no frameworks). It uses AJAX calls to interact with the Spring Boot API.
 
 - index.html: Contains forms for login, viewing available books, and managing users. Different views are rendered based on the user’s role (Librarian or Member).
