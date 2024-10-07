@@ -40,46 +40,6 @@ The project is structured with a JWT-based authentication mechanism for securing
 
 4. Code Structure
 
- library-management/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── library/
-│   │   │           ├── LibraryManagementApplication.java  # Main Application class
-│   │   │           ├── config/
-│   │   │           │   ├── JwtAuthenticationFilter.java  # JWT Token Filter
-│   │   │           │   ├── JwtUtil.java  # Utility class for JWT
-│   │   │           │   └── SecurityConfig.java  # Security Configurations
-│   │   │           ├── controllers/
-│   │   │           │   ├── AuthController.java  # Authentication endpoints
-│   │   │           │   ├── BookController.java  # Book management endpoints
-│   │   │           │   ├── BorrowHistoryController.java  # Borrow history endpoints
-│   │   │           │   └── MemberController.java  # Member management endpoints
-│   │   │           ├── models/
-│   │   │           │   ├── Book.java  # Book entity
-│   │   │           │   ├── BorrowHistory.java  # BorrowHistory entity
-│   │   │           │   └── User.java  # User entity
-│   │   │           ├── repositories/
-│   │   │           │   ├── BookRepository.java  # Repository for Book
-│   │   │           │   ├── BorrowHistoryRepository.java  # Repository for BorrowHistory
-│   │   │           │   └── UserRepository.java  # Repository for User
-│   │   │           ├── services/
-│   │   │           │   ├── BookService.java  # Service for Book operations
-│   │   │           │   ├── BorrowHistoryService.java  # Service for Borrow history operations
-│   │   │           │   └── UserService.java  # Service for User operations
-│   └── resources/
-│       ├── static/
-│       │   ├── css/
-│       │   │   └── style.css  # CSS styles
-│       │   ├── js/
-│       │   │   ├── index.html  # HTML for main page
-│       │   │   ├── librarian.html  # HTML for librarian interface
-│       │   │   └── member.html  # HTML for member interface
-│       └── templates/
-│           └── application.properties  # Properties file for configuration
-├── src/test/java/ # Test cases
-├── pom.xml  # Maven dependencies and build
 
 5. Frontend Approach
 The frontend is a simple, lightweight static site built with HTML, CSS, and JavaScript (no frameworks). It uses AJAX calls to interact with the Spring Boot API.
