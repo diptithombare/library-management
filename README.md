@@ -159,21 +159,3 @@ The frontend is a simple, lightweight static site built with HTML, CSS, and Java
 9. Conclusion:
 This system provides a robust foundation for a library management application, balancing ease of use with security and modularity. Further improvements can be made by adding more features such as advanced search and fine calculation.
 
-How to Run the Project
-1. Clone the Repository: 
-   ```bash
-   git clone https://github.com/your-repository-url.git
-   ```
-   
-2. Build and Run Backend:
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
-   ```
-
-3. Open Frontend:
-   - Navigate to `src/main/resources/static/index.html` and open it in your browser.
-
-4. Access API:
-   - API runs at `http://localhost:8080`.
-
